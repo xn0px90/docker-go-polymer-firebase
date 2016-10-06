@@ -25,7 +25,7 @@ RUN groupadd -g ${gid} ${group} \
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     apt-get clean && \
-    npm install -g gulp bower polymer-cli generator-polymer-init-custom-build
+    npm install -g gulp bower polymer-cli generator-polymer-init-custom-build firebase-tools
 
 USER ${user}
 
