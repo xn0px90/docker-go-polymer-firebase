@@ -3,7 +3,7 @@
 # Based on node:4-slim                                                            #
 #                                                                                 #
 # To build, do:                                                                   #
-#   $ docker build -t jefferyb/polymer-cli .                                      #
+#   $ docker build -t  xn0px90/docker-go-polymer-firebase                         #
 # To pull do:                                                                     #
 #   $ docker pull xn0px90/docker-go-polymer-firebase                              #
 ###################################################################################
@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     apt-get clean && \
     npm install -g gulp bower polymer-cli generator-polymer-init-custom-build firebase-tools
-    
+
     #install Go
 
 ENV GOLANG_VERSION 1.7.1
@@ -46,7 +46,7 @@ WORKDIR $GOPATH
 
 COPY go-wrapper /usr/local/bin/
 
-RUN go get github.com/derekparker/delve/cmd/dlv 
+RUN go get github.com/derekparker/delve/cmd/dlv
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
